@@ -11,5 +11,7 @@ using namespace std;
 //Insert code stub here
 
 int main() {
-
+	Solution a;
+	//run code here
+	return 0;
 }
