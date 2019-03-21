@@ -15,7 +15,25 @@ public:
 	bool isValid(string s) {
 		bool ans;
 		stack<char> pars; //for parentheses
-		
+		for (int i = 0; i < s.length(); ++i) {
+			if (s[i] == '(' || s[i] == '[' || s[i] == '{') {
+				pars.push(s[i]);
+			}
+			else if (s[i] == ')') {
+				if (pars.empty() || pars.top() != '(') return false;
+				else pars.pop();
+			}
+			else if (s[i] == ']') {
+				if (pars.empty() || pars.top() != '[') return false;
+				else pars.pop();
+			}
+			else if (s[i] == '}') {
+				if (pars.empty() || pars.top() != '{') return false;
+				else pars.pop();
+			}
+		}
+		if (pars.empty()) return true;
+		else return false;
 	}
 };
 
