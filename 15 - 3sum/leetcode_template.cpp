@@ -5,6 +5,7 @@
 #include <queue>
 #include <deque>
 #include <utility>
+#include <iterator>
 
 using namespace std;
 
@@ -12,7 +13,19 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        
+		vector<vector<int>> ans;
+		vector<int> negs;
+		vector<int> poss;
+		bool zero;
+		for (auto i : nums) {
+			if (i < 0) negs.push_back(i);
+			else if (i > 0) poss.push_back(i);
+			else zero = true;
+		}
+		if (zero) {
+			
+		}
+
     }
 };
 
