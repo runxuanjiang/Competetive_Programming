@@ -1,6 +1,6 @@
 //Competition #:
 //Problem #:
-//Acepted: 
+//Accepted: 
 
 #include <bits/stdc++.h>
 
