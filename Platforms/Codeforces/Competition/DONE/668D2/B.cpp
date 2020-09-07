@@ -1,6 +1,6 @@
-//Competition #:
-//Problem #:
-//Accepted: 
+//Competition #: Codeforces Round 668 Division 2
+//Problem #: B
+//Accepted: YES
 
 #include <bits/stdc++.h>
 
