@@ -15,6 +15,8 @@ Repository for keeping track of practice problem solutions for competetive progr
 # List of new algorithms and data structures learned since start of competetive programming experience
 
 ## Queue of topics to learn
+* Review Union Find / Disjoint Set Union
+* Review hashing and heaps
 * Segment Trees, Fenwick Trees
 * Articulation Point and Tarjan's algorithm
 * Line sweep algorithms - more complex examples (see hackerearth)
