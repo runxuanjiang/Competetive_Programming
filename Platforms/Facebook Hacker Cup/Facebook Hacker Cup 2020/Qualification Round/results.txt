@@ -1,5 +1,0 @@
-A: Travel Restrictions - Correct
-B: Alchemy - Correct
-C: Timber - Correct
-D1: Running on Fumes Chapter 1 - Time Limit Exceeded
-D2: Running on Fumes Chapter 2 - Did Not Attempt
