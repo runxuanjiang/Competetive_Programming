@@ -14,5 +14,9 @@ const int MOD = 1000000007;
 #define tests int testCount; cin >> testCount; while(testCount--)
 
 int main() {
-    
+    fast;
+    tests{
+        int n;
+        cin >> n;
+    }
 }

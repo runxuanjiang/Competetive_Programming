@@ -24,6 +24,7 @@ Repository for keeping track of practice problem solutions for competetive progr
 * Travelling Salesman Problem simplified using bitmask DP
 * Extended euclidean algorithm fast
 * Factorial and combination algorithms fast
+* Rabin Karp and KMP algorithm
 
 ## Topics already learned
 * Binary Search - should probably look at some more examples
