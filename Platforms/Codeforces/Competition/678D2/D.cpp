@@ -24,10 +24,10 @@ struct Data{
 };
 
 Data recurse(ll node, vector<unordered_set<ll>> &cities, vector<ll> &people) {
-
     Data res(0, 0, 0);
 
     vector<Data> cmax;
+    
     for (auto child : cities[node]) {
         cmax.push_back(recurse(child, cities, people));
         res.max = max(res.max, cmax.back().max);
@@ -52,7 +52,6 @@ Data recurse(ll node, vector<unordered_set<ll>> &cities, vector<ll> &people) {
             res.remaining += (add * res.leaves - people[node]);
         }
     }
-
     return res;
 }
 
