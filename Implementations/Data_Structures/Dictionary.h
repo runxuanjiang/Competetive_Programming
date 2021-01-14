@@ -39,7 +39,7 @@ public:
             if ((buckets[a].status == Status::Ghost || buckets[a].status == Status::Empty) && !avail) {
                 avail = &(buckets[a]);
             }
-
+                    
             //insert
             if (buckets[a].status == Status::Empty) {
                 avail->key = key;

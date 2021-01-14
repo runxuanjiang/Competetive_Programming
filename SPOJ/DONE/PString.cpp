@@ -1,6 +1,6 @@
 //Competition #:
 //Problem #: PSTRING - Remove The String
-//Accepted: 
+//Accepted: Yes
 
 #include <bits/stdc++.h>
 
