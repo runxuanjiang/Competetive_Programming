@@ -1,6 +1,6 @@
 //Competition #:
-//Problem #: I
-//Accepted: 
+//Problem #: C
+//Accepted: Yes
 
 #include <bits/stdc++.h>
 
@@ -16,4 +16,20 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    tests {
+        ll n, k;
+        cin >> n >> k;
+
+        ll inv = n-k;
+
+        for (int i = 1; i < k - inv; ++i) {
+            cout << i << " ";
+        }
+        for (int i = k - inv; i <= k; ++i) {
+            cout << 2*k - i - inv << " ";
+        }
+        cout << '\n';
+
+
+    }
 }

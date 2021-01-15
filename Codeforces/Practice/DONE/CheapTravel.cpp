@@ -1,5 +1,5 @@
-//Competition #:
-//Problem #: I
+//Competition #: round 266 Div 2 (466A)
+//Problem #: A
 //Accepted: 
 
 #include <bits/stdc++.h>
@@ -16,4 +16,16 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    ll n, m, a, b;
+    cin >> n >> m >> a >> b;
+
+    if (b >= a*m) {
+        cout << n * a << endl;
+    }
+    else {
+        ll res = 0;
+        res += (n / m) * b;
+        res += min((n%m)*a, b);
+        cout << res << endl;
+    }
 }
