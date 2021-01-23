@@ -10,7 +10,7 @@ class DisjointSet{
     std::vector<Node> nodes;
 
 public:
-    DisjointSet(size_t size) {
+    DisjointSet(size_t size=0) {
         std::vector<Node> tempNodes(size);
         for (int i = 0; i < size; ++i) {
             tempNodes[i].parent = i;
