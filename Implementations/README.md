@@ -1,15 +1,20 @@
-# List of data structures and algorithms to practice implementing:
+# Implementations of Data Structures and Algorithms 
 
 ## Completed:
 
 Data structures:
 * Dictionary
-* String
+* String Library
 * Disjoint Set (Union Find)
 
 
 Algorithms:
-* DFS
+* Depth-First Search (DFS)
+  * Find path in maze grid
+  * Find cycle in gird
+* Binary Search
+  * Standard binary search
+  * Lower bound binary search
 
 
 ## Todo:

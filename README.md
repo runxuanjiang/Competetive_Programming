@@ -2,16 +2,17 @@
 Personal repository for keeping track of problems, solutions, concepts, and implementations within competetive programming.
 
 ## File structure
-Templated implementations for popular data structures and algorithms are stored in `/Implementations`. The `/notes` directory is used to keep track of concepts previously learned and a to-do list of concepts to learn in the future. It also includes advice and resources for competetive programming in general. The other directories correspond to platforms for competetive programming. I mainly use Codeforces.
+* `/Implementations` - implementations for data structures and algorithms used in competetive programming.
 
-## Websites for contests and practice
-* Codeforces.com
-* Topcoder.com
-* Atcoder.jp
-* Leetcode.com
-* Codechef.com
-* Hackerrank.com
-* Hackerearth.com
+* `/Solutions` - submissions to problems and contests, organized by contest site/platform. I mainly use Codeforces.
+
+## Websites I use for contests and practice, and my username/handle for each.
+* [Codeforces](https://codeforces.com/) (handle: [runoxinabox](https://codeforces.com/profile/runoxinabox)).
+* [Topcoder](https://www.topcoder.com/community/learn)
+* [AtCoder](https://atcoder.jp/)
+* [Kattis](https://open.kattis.com/) (username: [Runxuan Jiang](https://open.kattis.com/users/runoxinabox))
+* [Leetcode](https://leetcode.com/) (username: [runoxinabox](https://leetcode.com/runoxinabox/))
+* [CodeChef](https://www.codechef.com/)
 
 ## Disclaimer
 This repository is created for my personal use for getting better at programming contests. Feel free to use any code you find here.
