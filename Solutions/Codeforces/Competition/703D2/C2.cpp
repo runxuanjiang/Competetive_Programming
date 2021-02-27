@@ -25,38 +25,35 @@ int main() {
     int n;
     cin >> n;
 
-    int l = 1, r=n;
-    int m = find(l, r);
-
-    while (r-l > 1) {
-        int mid = l + (r-l)/2;
-        if (m < mid) {
-            if (find(l, mid) == m) {
-                r = mid;
+    int m = find(1, n);
+    int res = 0;
+    if ( !(m == 1) && (m == n || find(1, m) == m)) {
+        int l = 1, r = m-1;
+        while (l <= r) {
+            int mid = l + (r-l)/2;
+            if (find(mid, m) == m) {
+                res = mid;
+                l = mid+1;
             }
             else {
-                l = mid;
-                m = find(l, r);
+                r = mid-1;
             }
         }
-        else {
-            if (find(mid, r) == m) {
-                l = mid;
-            }
-            else {
-                r = mid;
-                m = find(l, r);
-            }
-        }
-    }
-
-    if (l == r) {
-        cout << "! " << l << endl;
+        res = r;
     }
     else {
-        cout << "? " << l << " " << r << endl;
-        int m;
-        cin >> m;
-        cout << "! " << ((m == l) ? r : l) << endl;
+        int l = m+1, r = n;
+        while (l <= r) {
+            int mid = l + (r-l)/2;
+            if (find(m, mid) == m) {
+                res = mid;
+                r = mid-1;
+            }
+            else {
+                l = mid+1;
+            }
+        }
+        res = l;
     }
+    cout << "! " << res << endl;
 }
