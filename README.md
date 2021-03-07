@@ -7,7 +7,7 @@ Personal repository for keeping track of problems, solutions, concepts, and impl
 * `/Solutions` - submissions to problems and contests, organized by contest site/platform. I mainly use Codeforces.
 
 ## Websites I use for contests and practice, and my username/handle for each.
-* [Codeforces](https://codeforces.com/) (handle: [runoxinabox](https://codeforces.com/profile/runoxinabox)).
+* [Codeforces](https://codeforces.com/) (username: [runoxinabox](https://codeforces.com/profile/runoxinabox)).
 * [Topcoder](https://www.topcoder.com/community/learn)
 * [AtCoder](https://atcoder.jp/)
 * [Kattis](https://open.kattis.com/) (username: [Runxuan Jiang](https://open.kattis.com/users/runoxinabox))
