@@ -1,6 +1,7 @@
 .vscode
 *.out
 *.txt
+*.in
 
 Workbench/*
 
