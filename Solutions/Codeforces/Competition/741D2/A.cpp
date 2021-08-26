@@ -1,5 +1,5 @@
 //Competition #:
-//Problem #: I
+//Problem #: A
 //Accepted: 
 
 #include <bits/stdc++.h>
@@ -16,4 +16,10 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    tests {
+        ll a, b;
+        cin >> a >> b;
+        ll m = (b+1)/2;
+        cout << min(m - 1, b - a) << endl;
+    }
 }
