@@ -35,11 +35,11 @@ int main() {
             }
         }
 
-        unordered_set<int> seen;
-        queue<int> prev, next;
+        int seen = 0;
+        set<int> prev, next;
         for (int i = 0; i < parents.size(); ++i) {
             if (parents[i].empty()) {
-                prev.push(i);
+                prev.insert(i);
             }
         }
 
@@ -48,29 +48,29 @@ int main() {
         while (!prev.empty()) {
             ++res;
             while (!prev.empty()) {
-                int node = prev.front();
-                prev.pop();
+                int node = *(prev.begin());
+                prev.erase(prev.begin());
 
-                seen.insert(node);
+                ++seen;
 
                 for (auto child : children[node]) {
                     parents[child].erase(node);
                     if (parents[child].empty()) {
                         if (child > node) {
-                            prev.push(child);
+                            prev.insert(child);
                         }
                         else {
-                            next.push(child);
+                            next.insert(child);
                         }
                     }
 
                 }
             }
-
+            prev = {};
             swap(prev, next);
         }
 
-        if (seen.size() == n) {
+        if (seen == n) {
             cout << res << endl;
         }
         else {
