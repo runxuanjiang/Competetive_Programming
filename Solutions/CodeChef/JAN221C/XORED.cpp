@@ -34,19 +34,24 @@ int main() {
         }
 
         ll last = tot ^ x;
-        if (res.find(last) == res.end()) {
+        if (res.find(last) == res.end() && last <= 500000) {
             res.insert(last);
         }
         else {
             for (auto i = res.begin(); i != res.end(); ++i) {
-                if (*i != last && *i + (1ll << 18) <= 500000) {
+                if (*i != last) {
                     ll temp = *i + (1ll << 18);
                     res.erase(i);
                     res.insert(temp);
                     break;
                 }
             }
-            res.insert(last + (1ll << 18));
+            if (last > 500000) {
+                res.insert(last - (1ll << 18));
+            }
+            else {
+                res.insert(last + (1ll << 18));
+            }
         }
 
         for (auto i : res) {
