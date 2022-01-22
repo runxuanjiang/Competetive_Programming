@@ -7,7 +7,6 @@ Data structures:
 * String Library
 * Disjoint Set (Union Find)
 
-
 Algorithms:
 * Depth-First Search (DFS)
   * Find path in maze grid
@@ -20,6 +19,7 @@ Algorithms:
 ## Todo:
 
 Data structures:
+* Union Find (supporting adding nodes)
 * BST
 * Trie
 * Fenwick Tree, Segment Tree
@@ -29,3 +29,6 @@ Algorithms:
 * Sorting algorithms
 * KMP
 * Faster DFS
+* Strongly Connected Components
+* Convex Hull
+* Tarjan's / articulation point
