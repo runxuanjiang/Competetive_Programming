@@ -4,7 +4,7 @@
 class DisjointSet{
     struct Node{
         size_t parent;
-        int rank = 0;
+        long long rank = 0;
     };
 
     std::vector<Node> nodes;
