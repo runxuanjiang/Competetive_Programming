@@ -10,10 +10,14 @@ Data structures:
 Algorithms:
 * Depth-First Search (DFS)
   * Find path in maze grid
-  * Find cycle in gird
+  * Find cycle in grid
 * Binary Search
   * Standard binary search
   * Lower bound binary search
+* KMP
+  * Generate proper prefix array
+  * find number of times string appears in another string
+
 
 
 ## Todo:
@@ -27,7 +31,6 @@ Data structures:
 
 Algorithms:
 * Sorting algorithms
-* KMP
 * Faster DFS
 * Strongly Connected Components
 * Convex Hull
