@@ -16,4 +16,19 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    ll n;
+    cin >> n;
+    unordered_map<string, int> um;
+    for (int i = 0; i < n; ++i) {
+        string name;
+        cin >> name;
+        if (um.find(name) == um.end()) {
+            um[name] = 1;
+            cout << "OK" << endl;
+        }
+        else {
+            cout << name << um[name] << endl;
+            ++um[name];
+        }
+    }
 }
