@@ -22,38 +22,32 @@ int main() {
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
     }
- 
- 
-    vector<ll> curr(180001, 0), next(180001, 0);
-    curr[90000] = 1;
-    vector<ll> dp(n, 0);
-    dp[0] = 1;
- 
-    for (ll i = 1; i < n; ++i) {
-        next = vector<ll>(180001, 0);
+
+    vector<vector<ll>> dp(2, vector<ll>(200001, 0));
+    dp[0][a[1] + 100000]++;
+
+    for (ll i = 0; i < n-2; ++i) {
+        ll next = a[i+2];
         for (ll j = -90000; j <= 90000; ++j) {
-            if (curr[j + 90000] && a[i] + j >= -90000 && a[i] + j <= 90000) {
-                next[a[i] + j + 90000]++;
+            if (j == 0) {
+                dp[1][next + 100000] = (dp[1][next + 100000] + dp[0][j + 100000]) % MOD;
             }
-            if (curr[j + 90000] && a[i] - j >= -90000 && a[i] - j <= 90000) {
-                next[a[i] - j + 90000]++;
+            else {
+                dp[1][next + j + 100000] = (dp[1][next + j + 100000] + dp[0][j + 100000]) % MOD;
+                dp[1][next - j + 100000] = (dp[1][next - j + 100000] + dp[0][j + 100000]) % MOD;
             }
- 
         }
- 
-        if (i == 1) {
-            dp[i] = 1;
-        }
-        else {
-            dp[i] = (dp[i-1]*2 - curr[90000] + MOD) % MOD;
- 
-        }
- 
-        swap(curr, next);
- 
- 
+
+        swap(dp[0], dp[1]);
+        dp[1] = vector<ll>(200001, 0);
     }
- 
-    cout << dp.back() << endl;
+
+    ll res = 0;
+    for (auto i : dp.front()) {
+        res = (res + i) % MOD;
+    }
+    cout << res << endl;
+
+
  
 }
