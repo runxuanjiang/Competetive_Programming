@@ -31,30 +31,22 @@ int main() {
             }
         }
 
+        unordered_map<ll, ll> count;
+        for (auto i : nums) {
+            for (auto j : i) {
+                if (count.find(j) == count.end()) {
+                    count[j] = 0;
+                }
+                count[j]++;
+            }
+        }
 
-        ll res = false;
-        unordered_set<ll> seen;
+        bool res = false;
         for (auto i : nums) {
             bool good = true;
             for (auto j : i) {
-                if (seen.find(j) == seen.end()) {
+                if (count[j] == 1) {
                     good = false;
-                    seen.insert(j);
-                }
-            }
-
-            if (good) {
-                res = true;
-            }
-        }
-        seen = {};
-        vector<vector<ll>> rnums(nums.rbegin(), nums.rend());
-        for (auto i : rnums) {
-            bool good = true;
-            for (auto j : i) {
-                if (seen.find(j) == seen.end()) {
-                    good = false;
-                    seen.insert(j);
                 }
             }
 
@@ -64,11 +56,13 @@ int main() {
         }
 
         if (res) {
-            cout << "Yes" << endl;
+            cout << "YES" << endl;
         }
         else {
-            cout << "No" << endl;
+            cout << "NO" << endl;
         }
+
+
 
     }
 }
