@@ -46,38 +46,39 @@ int main() {
         factorial[i] = (factorial[i-1] * i) % m;
     }
 
-    ll zero = 1;
-    ll one = (2 * (factorial[2*n] - 1) + m) % m;
-    ll two = 0;
-    for (ll i = 1; i <= n; ++i) {
-        ll numerator = factorial[n];
-        numerator = (numerator * factorial[n]) % m;
-        numerator = (numerator * factorial[n]) % m;
-        numerator = (numerator * factorial[n]) % m;
-        numerator = (numerator * factorial[2*n-i]) % m;
+    ll uptozero = 1;
+    ll uptoone = (factorial[2*n] + factorial[2*n] - factorial[n]) % m;
+    ll uptotwo = (factorial[2*n] * modinverse(factorial[n], m)) % m;
+    uptotwo = (uptotwo * factorial[2*n]) % m;
+    uptotwo = (uptotwo * 2) % m;
+    ll intersection = 0;
+    for (ll i = 0; i <= n; ++i) {
+        ll num = factorial[n];
+        num = (num * factorial[n]) % m;
+        num = (num * factorial[2*n-i]) % m;
+        num = (num * factorial[n]) % m;
+        num = (num * factorial[n]) % m;
 
-        ll denominator = factorial[i];
-        denominator = (denominator * factorial[n-i]) % m;
-        denominator = (denominator * factorial[i]) % m;
-        denominator = (denominator * factorial[n-i]) % m;
-        denominator = (denominator * factorial[n-i]) % m;
+        ll denom = factorial[n - i];
+        denom = (denom * factorial[i]) % m;
+        denom = (denom * factorial[n-i]) % m;
+        denom = (denom * factorial[i]) % m;
+        denom = (denom * factorial[n-i]) % m;
 
-        cout << denominator << " " << modinverse(denominator, m) << endl;
-
-        ll add = (numerator * modinverse(denominator, m)) % m;
-        two = (two + add) % m;
-    }
-    two = (two * 2) % m;
-
-    ll three = (factorial[3*n] - zero - one - two) % m;
-    while (three < 0) {
-        three += m;
+        ll add = (modinverse(denom, m) * num) % m;
+        intersection = (add + intersection) % m;
     }
 
-    ll res = one;
-    res = (res + 2 * two) % m;
-    res = (res + 3 * three) % m;
-    cout << zero << " " << one << " " << two << " " << three << endl;
+    uptotwo = (uptotwo - intersection) % m;
+    ll uptothree = factorial[3*n];
+
+    ll res = 0;
+    res = (res + uptoone - uptozero) % m;
+    res = (res + 2 * (uptotwo - uptoone)) % m;
+    res = (res + 3 * (uptothree - uptotwo)) % m;
+    while (res < 0) {
+        res += m;
+    }
     cout << res << endl;
 
 }
