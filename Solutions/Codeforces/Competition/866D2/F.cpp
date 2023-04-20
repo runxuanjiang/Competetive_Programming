@@ -1,5 +1,5 @@
 //Competition #:
-//Problem #: E
+//Problem #: F
 //Accepted: 
 
 #include <bits/stdc++.h>
@@ -16,12 +16,4 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
-    tests {
-        ll l, r;
-        cin >> l >> r;
-
-        
-
-        
-    }
 }

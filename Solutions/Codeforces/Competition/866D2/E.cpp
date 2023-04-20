@@ -16,12 +16,4 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
-    tests {
-        ll l, r;
-        cin >> l >> r;
-
-        
-
-        
-    }
 }
