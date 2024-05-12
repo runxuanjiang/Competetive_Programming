@@ -42,17 +42,24 @@ int main() {
     vector<bool> seen(n);
 
     for (int i = 0; i < n; ++i) {
-        if (!seen[i]) {
+        if (!seen[i] && !g[i].empty()) {
             lengths.push_back(dfs(i, g[i].front(), g, seen));
         }
     }
 
-    
+    ll tot = 0;
+    for (auto i : lengths) {
+        if (i < l+r) {
+            tot ^= (i / l);
+        }
+    }
 
-    
-
-
-
+    if (tot == 0) {
+        cout << "Bob" << endl;
+    }
+    else {
+        cout << "Alice" << endl;
+    }
 
 
 }
