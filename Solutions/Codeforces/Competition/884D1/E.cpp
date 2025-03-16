@@ -1,5 +1,5 @@
 //Competition #:
-//Problem #: D
+//Problem #: E
 //Accepted: 
 
 #include <bits/stdc++.h>
@@ -16,18 +16,4 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
-    ll n, m, q;
-    cin >> n >> m >> q;
-
-    vector<pair<ll, ll>> a(n);
-    for (int i = 0; i < m; ++i) {
-        ll x, y;
-        cin >> x >> y;
-        a[i] = {x, y};
-    }
-    for (int i = 0; i < q; ++i) {
-        ll bit;
-        cin >> bit;
-        
-    }
 }
