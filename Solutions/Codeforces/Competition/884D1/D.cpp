@@ -16,4 +16,21 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+
+    tests {
+        ll n;
+        cin >> n;
+
+        for (int i = 1; i <= n+1; ++i) {
+            if (n % i != 0) {
+                for (int j = 0; j < n; ++j) {
+                    int offset = j%i;
+                    cout << (char) ('a' + offset);
+                }
+                cout << endl;
+
+                break;
+            }
+        }
+    }
 }
