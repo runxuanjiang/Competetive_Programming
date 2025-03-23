@@ -52,10 +52,10 @@ int main() {
 
     sort(events.begin(), events.end(), compEvent);
 
-    for (const auto &e : events) {
-        cerr << "(" << e.index << ", " << e.isEnd << ", " << e.event_id << ") ";
-    }
-    cerr << endl;
+    // for (const auto &e : events) {
+    //     cerr << "(" << e.index << ", " << e.isEnd << ", " << e.event_id << ") ";
+    // }
+    // cerr << endl;
 
     vector<pair<ll, ll>> priorities;
 
@@ -80,10 +80,10 @@ int main() {
 
     sort(priorities.begin(), priorities.end());
 
-    for (const auto p : priorities) {
-        cerr << "(" << p.first << ", " << p.second << ") ";
-    }
-    cerr << endl;
+    // for (const auto p : priorities) {
+    //     cerr << "(" << p.first << ", " << p.second << ") ";
+    // }
+    // cerr << endl;
 
     vector<ll> id_map(n, 0);
     ll ones = 0;
@@ -94,10 +94,10 @@ int main() {
         }
     }
 
-    for (int i = 0; i < n; ++i) {
-        cerr << id_map[i] << " ";
-    }
-    cerr << endl;
+    // for (int i = 0; i < n; ++i) {
+    //     cerr << id_map[i] << " ";
+    // }
+    // cerr << endl;
 
     ll first_extra = n;
     ll res = 0;
@@ -106,10 +106,12 @@ int main() {
             first_extra = i;
         }
 
-        if (i < ones && i < first_extra && s[i] == '0') {
+        if (i < ones && i < first_extra && s[priorities[i].second] == '0') {
             ++res;
         }
     }
+
+    // cerr << "res is originally: " << res << endl;
 
     for (int _ = 0; _ < q; ++_) {
         ll bit;
@@ -141,14 +143,15 @@ int main() {
                     --res;
                 }
             }
-            --ones;
-
             if (index < min(ones, first_extra)) {
                 ++res;
             }
+            --ones;
+
+
         }
 
-        cerr << "(s, ones, index): " << s << " " << ones << " " << index << endl;
+        // cerr << "(s, ones, index): " << s << " " << ones << " " << index << endl;
 
         cout << res << endl;
         
