@@ -50,8 +50,15 @@ int main() {
         ll zeros = 0;
         for (int i = 0; i < n; ++i) {
             int j = i;
-            while (j+1 < n && s[j] == '0') {
+            while (j < n && s[j] == '0') {
                 ++j;
+            }
+
+            if (j >= n) {
+                if (range_idx < m) {
+                    original_string = 1;
+                }
+                break;
             }
 
             ll zeros_in_group = (s[i] == '0') ? j-i : 0;
