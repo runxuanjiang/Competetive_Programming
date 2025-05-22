@@ -16,4 +16,38 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    tests {
+        ll n;
+        cin >> n;
+        vector<ll> a(n);
+        for (ll i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+
+        if (n == 1) {
+            cout << "NO" << endl;
+            continue;
+        }
+
+        ll ones = 0;
+        ll not_ones = 0;
+        ll sum_not_ones = 0;
+
+        for (auto i : a) {
+            if (i == 1) {
+                ones++;
+            } else {
+                not_ones++;
+                sum_not_ones += i;
+            }
+        }
+
+        if (sum_not_ones - not_ones >= ones) {
+            cout << "YES" << endl;
+        }
+        else {
+            cout << "NO" << endl;
+        }
+
+    }
 }
