@@ -27,32 +27,33 @@ int main() {
 
         ll res = 0;
 
-        vector<bool> flipped(n, false), prevflipped(n, false);
+
+        vector<bitset<3>> current(n, 0), next(n, 0);
+
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
-                
-                bool shouldflip = prevflipped[j] ^ (matrix[i][j] == '1');
-                bool shouldpropagate = prevflipped[j] ^ shouldflip;
-
-                if (shouldflip) {
+                bool flipped = current[j][0] ^ current[j][1] ^ current[j][2];
+                bool propagate = false;
+                if (flipped ^ (matrix[i][j] == '1')) {
                     ++res;
-                    cerr << "prevflipped[j] is " << prevflipped[j] << ", matrix[i][j] is " << matrix[i][j] << endl;
-                    cerr << "Flipping at (" << i << ", " << j << ")" << endl;
+                    propagate = true;
+                    // cerr << "Flipping at (" << i << ", " << j << ")" << endl;
                 }
 
-                if (shouldpropagate) {
-                    if (j-1 >= 0) {
-                        flipped[j-1] = !flipped[j-1];
-                    }
-                    flipped[j] = !flipped[j];
-                    if (j+1 < n) {
-                        flipped[j+1] = !flipped[j+1];
-                    }
+
+                if (j > 0 && (current[j][0] ^ propagate)) {
+                    next[j-1][0] = true;
                 }
-                
+                if (flipped ^ propagate) {
+                    next[j][1] = true;
+                }
+                if (j+1 < n && (current[j][2] ^ propagate)) {
+                    next[j+1][2] = true;
+                }
             }
-            swap(prevflipped, flipped);
-            flipped.assign(n, false);
+
+            swap(current, next);
+            next.assign(n, 0);
         }
 
         cout << res << endl;
