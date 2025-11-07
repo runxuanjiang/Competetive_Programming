@@ -16,4 +16,48 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    tests {
+        ll n, k;
+        cin >> n >> k;
+
+        ll res = 0;
+        ll curr = 0;
+
+        ll rem = n-curr;
+        while (rem >= k) {
+            cout << "? " << curr+1 << endl;
+            ll response;
+            cin >> response;
+
+            if (response == -1) {
+                return 0;
+            }
+
+            res ^= response;
+            curr += k;
+            rem = n-curr;
+        }
+
+        if (rem > 0) {
+            curr -= k;
+            while (curr+k < n) {
+                cout << "? " << curr + 2 << endl;
+                ll response;
+                cin >> response;
+
+                if (response == -1) {
+                    return 0;
+                }
+                res ^= response;
+                ++curr;
+            }
+        }
+
+        cout << "! " << res << endl;
+
+
+        
+
+
+    }
 }

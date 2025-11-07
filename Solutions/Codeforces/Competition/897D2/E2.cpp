@@ -1,5 +1,5 @@
 //Competition #:
-//Problem #: G
+//Problem #: E
 //Accepted: 
 
 #include <bits/stdc++.h>
@@ -16,4 +16,51 @@ const int MOD = 1000000007;
 
 int main() {
     fast;
+    tests {
+        ll n, k;
+        cin >> n >> k;
+
+        ll res = 0;
+        ll curr = 0;
+
+        ll rem = n-curr;
+        while (rem >= k) {
+            cout << "? " << curr+1 << endl;
+            ll response;
+            cin >> response;
+
+            if (response == -1) {
+                return 0;
+            }
+
+            res ^= response;
+            curr += k;
+            rem = n-curr;
+        }
+
+        if (rem > 0) {
+            curr -= k;
+            cout << "? " << curr + 1 + rem/2 << endl;
+            ll response;
+            cin >> response;
+            if (response == -1) {
+                return 0;
+            }
+            res ^= response;
+
+            cout << "? " << curr + 1 + rem << endl;
+            cin >> response;
+            if (response == -1) {
+                return 0;
+            }
+            res ^= response;
+        }
+
+        cout << "! " << res << endl;
+
+
+        
+
+
+    }
 }
